@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: 'Georgia';
+    background-color: #faeffe;
+    color: #331133;
+    text-align: left;
+}
+ 
+ 
+header {
+    background: #faeffe;
+    color: #331133;
+    padding: 10px 0;
+    text-align: center;
+}
+ 
+ 
+nav {
+    margin: 0px 0;
+}
+ 
+ 
+nav a {
+    color: #331133;
+    text-decoration: none;
+    padding: 10px 10px;
+    text-decoration: underline;
+}
+ 
+ 
+nav a:hover {
+    text-decoration: none;
+}
+ 
+ 
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+ 
+ 
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+}
+ 
