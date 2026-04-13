@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Collaboration</title>
+   <link rel="stylesheet" href="../css/pages.css">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <header>
+       <h1>Maya Flynn</h1>
+       <nav>
+           <a href="../index.html">Home</a></li>
+           <a href="../324-goals.html">324 Goals</a></li>
+       </nav>
+   </header>
+  
+   <main>
+       <section>
+           <h2>Collaboration</h2>
+               <p>Identify three different instances where you participated in collaborative work with your team as identified by specific commits, 
+                pull requests, and/or issue numbers on Github. These instances should not simply be "committing code" but situations that required 
+                back and forth with your peers, e.g., a substantial bug or a code review. </p>
+
+                <p> The three instances of collaboration I have identified are: getting the prestige button working, UI alignment, 
+                    and currencies going up over time. </p>
+                <p>
+                    Getting the <a href="https://github.com/Idle-Devs-Progress-is-Optional/PaperGame/pull/94">prestige button</a>
+                     working is the best example of collaborating from the three. In this case, I wrote code 
+                    for our prestige mechanic, and made classes and changes to our codebase in order to implement prestige. I tested
+                    the code, and then requested a PR, assigning Aubrey to the code review, and sent a discord message requesting a review,
+                    as our teams communication agreement suggests. Aubrey reviewed my code and made two small code suggestions, refactoring so that
+                    it followed the command pattern. She also noted that to match the pattern of the class structure it would make sense to have
+                    a prestige button class. I agreed with the suggestions, so auto changed the GitHub suggestions, and then went back into VSCode
+                    to make the major architecture change for the prestige class. I PRed it again, and she had other small code suggestions, like
+                    removing unused variables. After all the changes had been made, I merged the branch with main, and let my team members know that
+                    the save state would need to be deleted on their next game run, because of the changes I had made to the save state. 
+                    The code review served its purpose. Changes were not pushed to main until they met the design standards of our codebase, and 
+                    main remained clean. Communication was necessitated because of our code flow.
+                </p>
+                <p>
+                    In the case of <a href="https://github.com/Idle-Devs-Progress-is-Optional/PaperGame/pull/55">UI alignment</a>
+                    , Princess made changes to the UI, and requested a code review. I requested a change to the
+                    code, asking for main.lua to remain clean, and for the longer chunks of code to be moved to a different file. In class, 
+                    we discussed and decided that changes would be pushed to main, and then a later PR would clean up main.lua. In future cases,
+                    we would make sure to keep main.lua clean with our pushes. After the PR and our in class discussion, Princess merged the 
+                    changes with main. 
+                </p>
+                <p>
+                    For <a href="https://github.com/Idle-Devs-Progress-is-Optional/PaperGame/pull/40">currencies go up over time</a>
+                    , I was still getting used to the PR system. It was one of our earlier PRs. I had made changes
+                    to the mechanics of the game, implementing our base paper and word, tying them to weapons and clicking. I had created a lot of
+                    new variables and named some of them in a confusing mannor. Ian reviewed my PR, and asked about the variable names. I explained
+                    what I had meant by them in class, and how the term 'damage' was a refrence to our inital idea to have the weapons be significant
+                    for both cutting down trees and fighting mini-bosses, so we decided to stick with the term damage. Now in the last weeks of our
+                    project, that name now has little meaning, but is a reminder of our original ideas. 
+                </p>
+                <p> In all cases, communication was needed because of our coding flow, and making sure everything has two sets of eyes before it makes it
+                    to our main branch in GitHub. Communication was successful each time, and difficulties stemed from the code, not from conflict.
+                </p>
+
+
+       </section>
+       
+   </main>
+   <script src="js/script.js"></script>
+
+</body>
+</html>
