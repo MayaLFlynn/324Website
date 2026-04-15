@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Infrastructure</title>
+   <link rel="stylesheet" href="../css/pages.css">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <header>
+       <h1>Maya Flynn</h1>
+       <nav>
+           <a href="../index.html">Home</a></li>
+           <a href="../324-goals.html">324 Goals</a></li>
+       </nav>
+   </header>
+  
+   <main>
+       <section>
+           <h2>Infrastructure</h2>
+               <p> Cultivate a development environment and set of tools that fosters effective software creation. <br>
+                What development tools did you use through process to help write code and automate the build/deployment process? <br>
+                What is one specific problem (e.g., debugging and issue) that you encountered while writing code and how did your tools 
+                help or hinder your ability to address that problem? <br>
+                 </p>
+
+                <p>
+                    I used VSCode and the Love2D Support by Pixelbyte Studios and Lua by sumneko extentions for this project. I used 
+                    VSCode's build in GitHub support which allowed for the easy ability to switch branches and create pull requests.
+                    Love2D Support allowed me to run the program from VSCode which was very useful. The Lua extention allowed for 
+                    type checking, quickly switching to the definition and hovering to view details on functions. 
+                </p>
+                <p>
+                    While we were coding, we updated the function parameters for our buttons a few times before we released our MVP. 
+                    The Lua extention was quite annoying for this, because since we had defined our own class implementation, it was
+                    our notes about the parameters that showed up when we hovered. However, for some reason the Lua extension listed
+                    the parameters in alphabetical order instead of the order of the parameters. However, the functionality to jump 
+                    to the definition was very useful, so we didn't have to keep files open that we were only using for reference.
+                </p>
+                <p>
+                    Type checking was also very useful. When I created the Prestige class, I was confused as to why my calls to 
+                    create Prestige items were not working. Fortunatly, there were yellow squiggles from the Lua type checking extention
+                    that told me that it couldn't access the functions of the table Prestige. I thought this was odd because Prestige should
+                    have been of the Object type Prestige and not a table. This alongside VSCode's ability to find every instance of Prestige
+                    allowed me to more quickly find that I had previously made a table called Prestige with values in it that would affected
+                    when the user prestiged in our game. I was able to rename the table, and then the class worked as it should. 
+
+                </p>
+
+                
+
+
+       </section>
+       
+   </main>
+   <script src="js/script.js"></script>
+
+</body>
+</html>
