@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Testing Strategies</title>
+   <link rel="stylesheet" href="../css/pages.css">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <header>
+       <h1>Maya Flynn</h1>
+       <nav>
+           <a href="../index.html">Home</a></li>
+           <a href="../324-goals.html">324 Goals</a></li>
+       </nav>
+   </header>
+  
+   <main>
+       <section>
+           <h2>Testing Strategies</h2>
+               <p>Identify a component of your project that you were responsible for testing. <br>
+                According to code coverage tools, what aspects of this component are covered with tests? <br>
+                What kinds of tests are they? <br>
+                For code that is not covered by tests, why did you not cover them?</p>
+                <p>
+                    I was responsible for creating and testing the Math library for our game. It was designed in order to allow
+                    precision when numbers pass Lua's 2^53 promised number. Every component of every function in the mathHander file was tested
+                    with the tests. In addition, every branch of create new BigNum in big_number was also tested through the test suite. 
+                    These tests are static. They test whether the functions in the math library work or not for the given inputs. I would have
+                    liked have the program choose different numbers each time, but I wouldn't have been able to test thier legitamacy. The 
+                    tests are unit tests.
+                </p>
+                <p>
+                    The code that is not directly covered by tests includes the Object class file. This code was adopted by Aubrey for our use case, from
+                    rxi's code on GitHub. Since the code simply allows us to create an Object, it gets indirectly tested whenever a BigNum is
+                    created. Also, the tests for power and division haven't been written, as power and division haven't been implemented. The tests for
+                    multiplication and modulo have been written, but are not called on every run because the implementations for multiplication and
+                    module have not been completed.
+                </p>
+                <p>
+                    The testing suite for the math library is 
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/Maya-NonGame-Testing/blob/main/test.lua">here</a>, 
+                    and the Math library itself is 
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/Maya-NonGame-Testing/blob/main/handlers/mathHandler.lua">here</a>. 
+                </p>
+
+                
+
+
+       </section>
+       
+   </main>
+   <script src="js/script.js"></script>
+
+</body>
+</html>
