@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Medium Scale Architecture</title>
+   <link rel="stylesheet" href="../css/pages.css">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <header>
+       <h1>Maya Flynn</h1>
+       <nav>
+           <a href="../index.html">Home</a></li>
+           <a href="../324-goals.html">324 Goals</a></li>
+       </nav>
+   </header>
+  
+   <main>
+       <section>
+           <h2>Medium-scale Architecture</h2>
+               <p>Medium-scale architecture: Choose one of the components of your project that you 
+                (co-)designed according to its architecture, e.g., front-end versus back-end. <br>
+                What architectural pattern does your program employ? <br>
+                What components result from this pattern in your program? <br>
+                What technologies and/or libraries make-up each of the components?
+                </p>
+
+                <p>
+                    I designed the 
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/PaperGame/blob/main/handlers/drawingHandler.lua">drawingHandler</a>
+                    which was also later worked on by myself and other group members. The drawingHandler takes care of every game element that needs
+                    to be drawn on screen. It calls functions to draw each of our buttons and then adds text on top of the background imagery and 
+                    buttons. It also deals with checking when things should be visible to the user and hides elements in the early stages of the game
+                    before users have unlocked everything. 
+                </p>
+                <p>
+                    The program employs the model-view-controller architectural pattern. The drawingHandler falls distinctly in the
+                    view piece of the model-view-controller pattern. It presents information to the user, and responds to changes 
+                    from the user. Other components that are a part of our program because of the model-view-controller pattern include
+                    the gameStateHandler which deals with the model of the game, and the perSecHandler that deals with the controller
+                    part of the game. 
+                </p>
+                <p>
+                    For the most part, the 
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/PaperGame/blob/main/handlers/gameStateHandler.lua">gameStateHandler</a>, 
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/PaperGame/blob/main/handlers/drawingHandler.lua">drawingHandler</a>, and 
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/PaperGame/blob/main/handlers/perSecHandler.lua">perSecHandler</a> 
+                    encapsulate the model, view, and controller
+                    respectively. However, we had to seperate out key pressed and mouse pressed controller functionality because of the 
+                    specifics of how Love2D works. In addition, our testing framework falls very distinctly outside all of these categories.
+                </p>
+
+
+       </section>
+       
+   </main>
+   <script src="js/script.js"></script>
+
+</body>
+</html>
