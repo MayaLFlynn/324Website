@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Testing Infrastructure</title>
+   <link rel="stylesheet" href="../css/pages.css">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <header>
+       <h1>Maya Flynn</h1>
+       <nav>
+           <a href="../index.html">Home</a></li>
+           <a href="../324-goals.html">324 Goals</a></li>
+       </nav>
+   </header>
+  
+   <main>
+       <section>
+           <h2>Testing Infrastructure</h2>
+               <p>Identify relevant components from your development infrastructure (IDE, build, etc.) that you use to test your project. <br>
+                How have you automated your tests so that they both take "1-click" to run and run automatically as part of build validation. <br>
+                Describe a specific occurrence in which your testing infrastructure saved you and/or your team work? <br>
+                </p>
+                <p>
+                    I was responsible for creating and testing the Math library for our game. It was designed in order to allow
+                    precision when numbers pass Lua's 2^53 promised number. I created a unit testing library in order to test the Math
+                    library. The tests are called automatically when the program is run. The Math library tests are split out into 
+                    categories based on the mathematical function that they are testing. These could be easily consolidated into one test that 
+                    runs the first time the game loads, but since the Math library is not getting incorperated into the game, I did not
+                    create that consolidation.
+                </p>
+                <p>
+                    As good coding practice suggests, I wrote all of the tests before I wrote the code for the Math functions. As I created the
+                    functions I periodically ran the tests to check if I was doing everything correctly. Frequently, I had problems that the 
+                    test suite caught. One of them was in the not equals function, which I wouldn't have noticed as quickly without the test 
+                    suite. Lua uses ~= for not equals, and I had already tested my equals function, so for my notequal, I just returned 
+                    ~Math.equal(param). This however didn't work, because you cannot use ~ by itself to negate something, so my tests were
+                    not passing. It was an easy fix, but easier to catch with tests. Before filling in any of my functions, I wrote the outline
+                    for the functions I wanted to implement. For most I didn't do stub functionality, but for some reason I made a stub equals 
+                    function, perhaps to see how the Lua docs worked. When I came back a couple days later, writing tests for notequals, I had
+                    assumed that I had implemented and tested the equal function already. Then when all the notequal tests that should have 
+                    been true came back false, I was very confused. I was able to quickly find and adress the problem, but it saved a lot of
+                    confusion because it had been caught in the testing suite.
+                </p>
+                <p>
+                    The testing suite for the math library is 
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/Maya-NonGame-Testing/blob/main/test.lua">here</a>, 
+                    and the Math library itself is 
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/Maya-NonGame-Testing/blob/main/handlers/mathHandler.lua">here</a>. 
+                </p>
+
+                
+
+
+       </section>
+       
+   </main>
+   <script src="js/script.js"></script>
+
+</body>
+</html>
