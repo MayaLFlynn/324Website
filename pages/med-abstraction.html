@@ -20,10 +20,33 @@
    <main>
        <section>
            <h2>Medium-scale Abstraction</h2>
-               <p>Use the principles and patterns of abstraction to design elegant, extensible, and maintainable software modules for medium-scale (multi-component) systems.
+               <p>Medium-scale abstraction: Choose a part of the project that you (co-)wrote that employs medium-scale abstraction. <br>
+                What functionality does your code sample abstract away? <br>
+                How does it mechanical achieve abstraction? <br>
+                What purpose does this abstraction serve in your larger program? <br>
+
                    <li><a href="https://github.com/Idle-Devs-Progress-is-Optional/PaperGame/blob/main/classes/factory.lua">Factory class</a></li>
                 </p>
 
+                <p>
+                    I designed the prestige button and its functionality. Like all of the other interactable items, it has two components,
+                    the UI component and the functionality component. I designed both of the classes for these. In the
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/PaperGame/blob/main/classes/prestige_button.lua">UI component</a>,
+                    we have three different functions. A function that allows you to create a prestige object, one that defines behavior when the
+                    mouse is hovering over the object and one that defines behavior when it is clicked. These functions are also in other classes,
+                    so that in elsewhere in the program, we can loop over each object and do those functions if they are needed. 
+                </p>
+
+                <p>
+                    When the UI prestige button is created, it will be linked to the functionality piece of the prestige button. 
+                    This has only two functions, mimicing other Buyable items in our program. The functionality of each button in our
+                    game happens within an action called 'buy' which checks whether the conditions have been met in order to purchace 
+                    the item, and then does that purchacing. In the prestige button case, 'buy' means do the action prestige which is 
+                    to reset the game and double the global multiplier. This function allows to hide the direct functionality of the
+                    button, and simply call it like we would any other button. If we ever wanted to change the functionality of prestige,
+                    such as one of the several ways significantly more complex ways we envisioned it at the beggining of our project, 
+                    we would only have to change what happened in this one funciton.
+                </p>
 
        </section>
        
