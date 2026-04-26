@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Domain-specific Architecture</title>
+   <link rel="stylesheet" href="../css/pages.css">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <header>
+       <h1>Maya Flynn</h1>
+       <nav>
+           <a href="../index.html">Home</a></li>
+           <a href="../324-goals.html">324 Goals</a></li>
+       </nav>
+   </header>
+  
+   <main>
+       <section>
+           <h2>Domain-specific Architecture</h2>
+               <p>Domain-specific architecture: Identify a portion of your codebase that you worked on that exemplifies domain-specific architecture. <br>
+                What aspects of your software architecture arise because of the domain your program operates in or the technology it employs? <br>
+                What domain-specific/technology-specific problem does your architectural choices solve? <br>
+                How does your solution solve these issues? </p>
+
+                <p>
+                    Idle games are unique in that they give the players exponentially better things as time goes on. This means that the numbers
+                    of the game increase exponentially as well, which becomes a problem in the software, because we must store those numbers.
+                    Lua guarentees precision on numbers up to 2^53, or around 9 quadrillion, but it is possible that users get numbers above
+                    9 quadrillion in our game. In order to deal with this, I attempted to make a Math library with functions that would allow 
+                    our numbers to remain precise past the quadrillions. 
+                </p>
+                <p>
+                    To start my project, I went through our game and found every 
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/IdleDesign/blob/main/Where%20Numbers">instance of a number</a>.
+                    I then calculated which numbers were possible
+                    to grow past 9 quadrillion. I decided that as long as the number couldn't reach 9 quadrillion in 100 years of constantly playing
+                    the game, then that number didn't need to be in my extended number class. I determined that there were 6 instances of numbers
+                    that could pass the range of 2^53. Those were the price of weapons and meeple, current paper and lifetime paper, current wood and
+                    lifetime wood, and paper sacrificed. I then went through the code again to determine what mathematical functions were used to 
+                    get those numbers or used on those numbers. I discovered 11 functions that were relevant. +,-,*,/,%,==,~=,>,<,>=, and <=. 
+                    I knew I would need to create a new type of number, which I decided to call BigNum, and then functions that I could safely 
+                    use to create or update BigNums. This would allow precision throughout the duration of the game.
+                </p>
+                <p>
+                    I was able to 
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/Maya-NonGame-Testing/blob/main/handlers/mathHandler.lua">implement</a>,
+                    <a href="https://github.com/Idle-Devs-Progress-is-Optional/Maya-NonGame-Testing/blob/main/test.lua">test</a>,
+                    and verify seven of the eleven functions I identified. I made attempts at two more of the functions,
+                    modulo, which I believe works, but relies on multiplication and power being implemented. As I was implementing the math function,
+                    I was finding it very difficult to find a way to store and carry the information without being about to use a modulo function. 
+                    I am sure that there is a way, and that it would be possible for me to implement. However, throughout the process I became
+                    familiar with what Lua does to numbers when they pass 2^53, and what guarentees Lua has. Since we display at most 6 significant
+                    digits, we are only required to have precision within those 6 digits which Lua is able to do for big numbers without my library 
+                    extension. In addition, the amount of time I would need to spend in order to get the library to work correctly and precisely would
+                    mean that our game would miss out on both additional accessiblity features and small additional gameplay features. In the effort 
+                    to prioritize user expirence above mathematical correctness, our group decided to set aside the Math library, and not incorperate it
+                    into our game.
+                </p>
+
+
+       </section>
+       
+   </main>
+   <script src="js/script.js"></script>
+
+</body>
+</html>
