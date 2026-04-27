@@ -1,9 +1,10 @@
 body {
-    margin: 0;
+    margin: 50px;
     font-family: 'Georgia';
     background-color: #faeffe;
     color: #331133;
     text-align: left;
+    max-width: 70ch;
 }
  
  
@@ -30,4 +31,8 @@ nav a {
  
 nav a:hover {
     text-decoration: none;
+}
+
+.content {
+    max-width: 80ch;
 }
